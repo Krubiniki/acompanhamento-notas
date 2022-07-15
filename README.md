@@ -45,6 +45,21 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
+## Endpoints
+
+Notas
+- notas/ -> only for Professor
+- notas/new/ -> only for Professor
+- notas/:id -> only for Aluno
+- notas/:id/update -> only for Professor
+- notas/:id/delete -> only for Professor
+
+Users
+- users/:id
+- users/new
+- users/:id/update
+- users/:id/delete
+
 ## Test
 
 ```bash

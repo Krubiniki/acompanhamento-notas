@@ -52,8 +52,12 @@ export class NotasService {
         else{ throw new UnauthorizedException() }
     }
 
-    async deleteNota(id: string): Promise<any> {
-        return this.notasRepository.delete({ id: id })
+    async deleteNota(payload: notasInterface): Promise<any> {
+        let user = await this.usersService.getUserByName(payload.user_name)
+        if(user.type == 'Professor'){
+            return this.notasRepository.delete({ id: payload.nota_id })
+        }
+        else{ throw new UnauthorizedException() }
     }
 }
 

@@ -14,7 +14,7 @@ export class NotasController {
     getNotaByUserId(@Body() payload:any){
         return this.notasService.getNotaByUserId(payload)
     }
-    
+
     @Post('/new')
     createNota(@Body() payload:any){
         console.log(payload)
@@ -26,8 +26,8 @@ export class NotasController {
         return this.notasService.updateNota(payload)
     }
 
-    @Delete('/:id/delete')
-    deleteNota(@Param('id') id:string){
-        return this.notasService.deleteNota(id)
+    @Post('/:id/delete')
+    deleteNota(@Body() payload:any){
+        return this.notasService.deleteNota(payload)
     }
 }
